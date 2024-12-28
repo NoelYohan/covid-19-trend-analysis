@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top 10 Active Cases</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 15px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin: 10px 0;
+      }
+      .btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Top 10 States with Most Deaths in India</h1>
+    <img src="{{ plot_path }}" alt="Top 10 Deaths Cases Plot" />
+    <a href="/" class="btn">Back to Home</a>
+  </body>
+</html>
