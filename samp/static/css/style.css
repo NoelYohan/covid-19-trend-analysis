@@ -100,7 +100,7 @@ b {
   color: var(--clr-primary);
 }
 .success {
-  color: var(--clr-success);
+  color: green;
 }
 .danger {
   color: var(--clr-danger);
@@ -108,6 +108,7 @@ b {
 .warning {
   color: var(--clr-warnig);
 }
+
 
 /* aside*/
 
@@ -465,15 +466,18 @@ Right side
   color: var(--clr-dark-variant);
   margin-bottom: 40px;
 }
+.close{
+  cursor: pointer;
+}
 
 /***
 Media Query
 ***/
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 100%) {
   .container {
-    width: 94%;
-    grid-template-columns: 7rem auto 14rem;
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
   }
   aside .sidebar h3 {
     display: none;
@@ -579,13 +583,27 @@ Media Query for phones
 }
 
 .container {
+  margin-top:30px;
+  margin-bottom:50px;
   max-width: 1200px;
-  margin: 0 auto;
   padding: 20px;
   position: relative;
   width: 100%;
+  background-color: var(--clr-white);
+  width: 100%;
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: all 0.3s ease;
+  color: var(--clr-dark);
 }
 
+.content{
+  margin:30px;
+  border-top: 130rem;
+  gap:5rem;
+}
 button {
   padding: 10px 20px;
   font-size: 16px;
@@ -594,14 +612,15 @@ button {
   margin-bottom: 20px;
   border-radius: 50px;
   border-color: #a340a9;
-  background-color: rgb(163, 40, 220);
-  color: rgb(25, 7, 27);
+  background-color:coral;
+  color: rgb(255, 255, 255);
 }
 .table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
   display: none;
+  margin-top: 20px;
 }
 .table th,
 .table td {
@@ -614,4 +633,13 @@ button {
 }
 h1 {
   color: rgb(28, 70, 106);
+  margin-bottom: 20px;
+  font-size: 36px;
+}
+.primary:hover{
+  text-decoration: underline;
+  text-decoration-color: aqua;
+  text-decoration-thickness: 2.5px;
+  transition: all 0.5s ease-in;
+  color:var(--clr-primary);
 }

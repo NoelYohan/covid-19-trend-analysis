@@ -28,7 +28,7 @@
 
         <div class="sidebar">
 
-          <a href="#">
+          <a href="#home" id="home">
             <span class="material-symbols-outlined">grid_view</span>
             <h3>Dashboard</h3>
           </a>
@@ -36,7 +36,7 @@
             <span class="material-symbols-outlined">person_outline</span>
             <h3>Customers</h3>
           </a>
-          <a href="#">
+          <a href="https://public.tableau.com/app/profile/noel.yohannan/viz/miniTab/Sheet1">
             <span class="material-symbols-outlined">insights</span>
             <h3>Analytics</h3>
           </a>
@@ -136,23 +136,59 @@
       <!--end inside-->
       <!--start recent order-->
       <div class="recent_order">
-        <h1>Recent Cases</h1>
+        <div class ="container">
+          <div class="content">
+            <h1>What is COVID?</h1></br>
+            <p>COVID-19, short for Coronavirus Disease 2019, is a highly contagious respiratory illness caused by the Severe Acute Respiratory Syndrome Coronavirus 2 (SARS-CoV-2). It was first identified in December 2019 in Wuhan, China, and quickly spread worldwide, leading to a global pandemic declared by the World Health Organization (WHO) in March 2020.</p>
+          </div>
+            </div>
+        <div class="container">
+          <h1>COVID-19 Statewise Data</h1></br></br>
+          <a href="#" class="btn"><button onclick="displayTable()">Show Data</button></a>
+          <div id="table-container">
+            <!-- The HTML table will be inserted here by Flask -->
+            {{ table_html | safe }}
+          </div>
+          <a href="/vaccine" class="btn"
+            ><button onclick="displayTable()">Show Vaccine Data</button></a
+          >
+          <a href="/statewise" class="btn"><button onclick="displayTable()">  Show Statewise Data</br> (With Recovery & Mortality Rates)</button></a>
+          <a href="/top10active" class="btn"><button onclick="displayTable()">Top 10 States with Most Active Cases</button></a>
+          <a href="/top10deaths" class="btn"><button onclick="displayTable()">Top 10 States with Most Deaths</button></a>
+          <a href="/top5states" class="btn"><button onclick="displayTable()">Top 5 Affected States In india</button></a>
+        </div>
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+          crossorigin="anonymous"
+        ></script>
+        <script>
+          // Function to show the table when the button is clicked
+          function displayTable() {
+            const table = document.querySelector(".table");
+            table.style.display =
+              table.style.display === "none" || table.style.display === ""
+                ? "table"
+                : "none";
+          }
+        </script>
+        <h1>Recent Vaccinations</h1>
         <table>
           <thead>
             <tr>
               <th>Product Name</th>
-              <th>Product Number</th>
+              <th>Certificate ID</th>
               <th>Payments</th>
               <th>Status</th>
             </tr>
           </thead>
           <tbody>
                <tr>
-                  <td>Mini USB</td>
-                  <td>456</td>
-                  <td>Due</td>
-                  <td class="warning">Pending</td>
-                  <td class="primary">Details</td>
+                  <td>Covishield</td>
+                  <td>73217371177</td>
+                  <td>Done</td>
+                  <td class="Success">Success</td>
+                  <td class="primary" ><a href="https://drive.google.com/file/d/1_Gb6nVxBMCk32K2W_ORkRSoTi_k4_KLW/view?usp=sharing">Details</td></a>
               </tr>
               <tr>
                 <td>Mini USB</td>
@@ -184,41 +220,7 @@
       </tr>
           </tbody>
         </table>
-        <div class ="container">
-          <div class="content">
-            <h1>What is COVID?</h1>
-          </div>
-            </div>
-        <div class="container">
-          <h1>COVID-19 Statewise Data</h1>
-          <a href="#" class="btn"><button onclick="displayTable()">Show Data</button></a>
-          <div id="table-container">
-            <!-- The HTML table will be inserted here by Flask -->
-            {{ table_html | safe }}
-          </div>
-          <a href="/vaccine" class="btn"
-            ><button onclick="displayTable()">Show Vaccine Data</button></a
-          >
-          <a href="/statewise" class="btn"><button onclick="displayTable()">  Show Statewise Data (With Recovery & Mortality Rates)</button></a>
-          <a href="/top10active" class="btn"><button onclick="displayTable()">Top 10 States with Most Active Cases</button></a>
-          <a href="/top10deaths" class="btn"><button onclick="displayTable()">Top 10 States with Most Deaths</button></a>
-          <a href="/top5states" class="btn"><button onclick="displayTable()">Top 5 Affected States In india</button></a>
-        </div>
-        <script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-          crossorigin="anonymous"
-        ></script>
-        <script>
-          // Function to show the table when the button is clicked
-          function displayTable() {
-            const table = document.querySelector(".table");
-            table.style.display =
-              table.style.display === "none" || table.style.display === ""
-                ? "table"
-                : "none";
-          }
-        </script>
+       
       </div>
       <!--end recent order-->
        </main>
