@@ -626,16 +626,23 @@ button {
 .table td {
   padding: 8px;
   text-align: center;
-  border: 1px solid #3fdb8d;
+  border: 1px solid #181a1e ;
+  background-color: #3ac6aa;
 }
 .table-striped tbody tr:nth-of-type(odd) {
-  background-color: #795252;
+  background-color: #3ac6aa;
+  color:#181a1e;
+}
+.table-striped tbody tr:nth-of-type(even) {
+  background-color: #3ac6aa;
+  color:#181a1e;
 }
 h1 {
   color: rgb(28, 70, 106);
   margin-bottom: 20px;
   font-size: 36px;
 }
+
 .primary:hover{
   text-decoration: underline;
   text-decoration-color: aqua;

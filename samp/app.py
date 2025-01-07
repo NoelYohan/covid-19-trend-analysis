@@ -31,12 +31,12 @@ def home():
 @app.route('/vaccine')
 def vaccine_data():
     vaccine_df = pd.read_csv("E:/covid data sets/covid_vaccine_statewise.csv")
-    vaccine_table_html = vaccine_df.head(7).to_html(classes="table table-striped", index=False)
+    vaccine_table_html = vaccine_df.head(11).to_html(classes="table table-striped", index=False)
     return render_template("vaccine.html", vaccine_table_html=vaccine_table_html)
 
 @app.route('/statewise')
 def statewise_data():
-    styled_html = statewise.style.background_gradient(cmap="cubehelix").to_html()
+    styled_html = statewise.style.background_gradient(cmap="twilight").to_html()
     return render_template("statewise.html", styled_html=styled_html)
 
 @app.route('/top10active')
